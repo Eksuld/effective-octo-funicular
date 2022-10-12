@@ -5,22 +5,23 @@ const developer = {
     experience: 24,
     jobAllInfo: {
         type: 'Front-End',
-        framework: 'ReactJS',
+        framework: {
+            name:'ReactJS',
+        }
     }
 }
 
-console.log('type', developer.jobAllInfo.type);
-console.log('framework', developer['jobAllInfo']['framework']);
+// Опциональная цепочка ?.
+// console.log(developer.jobAllInfo.framework);
 
-// console.log('developer', developer);
+if(developer && developer.jobAllInfo && developer.jobAllInfo.framework && developer.jobAllInfo.framework.name) { 
+    console.log("Разработчик уже знает фреймворк");
+} else {
+    console.log("Разработчик еще НЕ знает фреймворк");
+}
 
-// //1 Получение значений через .
-
-// console.log('name', developer.name);
-// console.log('framework', developer.jobAllInfo.framework);
-
-// //2 Получение значений через []
-
-// const key = 'name';
-
-// console.log('name', developer[key]);
+if(developer?.jobAllInfo?.framework?.name) { 
+    console.log("Разработчик уже знает фреймворк");
+} else {
+    console.log("Разработчик еще НЕ знает фреймворк");
+}
