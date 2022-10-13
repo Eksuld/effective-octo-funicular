@@ -16,12 +16,7 @@ const users = [
     },
 ];
 
-// let usersOnline = users.filter(item => )
+let usersOnline = users.filter(item => item.status === 'online');
+usersOnline = usersOnline.map(item => item.username).join(', ');
 
-// for(let user of users) {
-//     console.log(user.status);
-// }
-let user;
-user = users.map(item => {
-    if item.status 
-})
+alert(`Сейчас в онлайн следующие пользователи: ${usersOnline}`);
